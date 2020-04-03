@@ -3,7 +3,7 @@ const boxen = require('boxen');
 
 const branch_name = execSync(`git branch --contains`).toString().match(/\* (?:\(no branch, rebasing )?([^)\n]+)/)[1];
 
-if (branch_name === 'develop' || branch_name === master) {
+if (branch_name === 'develop' || branch_name === 'master') {
   console.error(boxen(`☠⚠️⚠️⚠️${branch_name}ブランチにpushしないで！！ from高沼⚠️⚠️⚠️️☠`, {
     borderStyle: 'double',
     align: 'center'
