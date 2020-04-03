@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
 const theme = {
   colors: {
     primary: '#0070f3',
+    borderline: '#dadada'
   },
 }
 export default class MyApp extends App {
