@@ -1,4 +1,5 @@
 
 import RootStyle from './RootStyle';
+import Button from './Button';
 
-export { RootStyle };
+export { RootStyle, Button };
