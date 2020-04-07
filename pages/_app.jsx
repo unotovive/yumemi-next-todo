@@ -16,10 +16,10 @@ const theme = {
   colors: {
     black: '#00214D',
     white: '#fffffe',
-    primary: '#00214D',
-    secondly: '#00214D',
-    gray: '#00214D',
-    borderline: '#dadada'
+    primary: '#FF5470',
+    secondary: '#00EBC7',
+    gray: '#888888',
+    borderline: '#dddddd'
   },
 }
 

@@ -22,21 +22,42 @@ const ButtonWrapper = styled.button`
     switch (props.valiant) {
       case "outline":
         style = css`
+          outline: none;
           color: ${props => props.theme.colors.gray};
           background-color: ${props => props.theme.colors.white};
           border: 2px solid ${props => props.theme.colors.gray};
+          :hover {
+            opacity: 0.8;
+          }
+          :active {
+            opacity: 0.6;
+          }
         `;
         break;
       case "primary":
         style = css`
+          outline: none;
           color: ${props => props.theme.colors.white};
           background-color: ${props => props.theme.colors.primary};
+          :hover {
+            opacity: 0.8;
+          }
+          :active {
+            opacity: 0.6;
+          }
         `;
         break;
       case "secondary":
         style = css`
+          outline: none;
           color: ${props => props.theme.colors.black};
           background-color: ${props => props.theme.colors.secondary};
+          :hover {
+            opacity: 0.8;
+          }
+          :active {
+            opacity: 0.6;
+          }
         `;
         break;
     }
