@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import TextArea from '../components/TextArea';
 import Button from '../components/Button';
+import Input from '../components/Input';
 
 const DlWrapper = styled.dl`
   dd {
@@ -17,6 +18,10 @@ export default () => {
       <dt>TextArea</dt>
       <dd>
         <TextArea label="ラベル" value={text} setter={setText} />
+      </dd>
+      <dt>Input</dt>
+      <dd>
+        <Input label="ラベル" value={text} setter={setText} />
       </dd>
       <dt>Button</dt>
       <dd>
