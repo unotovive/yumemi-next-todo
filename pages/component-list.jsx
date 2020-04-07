@@ -13,6 +13,7 @@ const DlWrapper = styled.dl`
 
 export default () => {
   const [text, setText] = useState('test');
+
   return (
     <DlWrapper>
       <dt>TextArea</dt>
@@ -21,7 +22,13 @@ export default () => {
       </dd>
       <dt>Input</dt>
       <dd>
-        <Input label="ラベル" value={text} setter={setText} />
+        <Input label="text" value={text} type="text" setter={setText} />
+      </dd>
+      <dd>
+        <Input label="number" value={text} type="number" setter={setText} />
+      </dd>
+      <dd>
+        <Input label="password" value={text} type="password" setter={setText} />
       </dd>
       <dt>Button</dt>
       <dd>

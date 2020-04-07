@@ -2,14 +2,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Input = ({ label, value = '', setter } = {}) => {
+const Input = ({ label, type, value = '', setter } = {}) => {
   const changeHandler = (e) => {
     setter && setter(e.target.value)
   }
   return (
     <div>
       {label && <LabelWrapper>{label}</LabelWrapper>}
-      <InputWrapper value={value} onChange={changeHandler} />
+      <InputWrapper value={value} onChange={changeHandler} type={type} />
     </div>
   )
 };
