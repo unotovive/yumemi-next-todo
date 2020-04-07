@@ -14,10 +14,15 @@ const GlobalStyle = createGlobalStyle`
 `
 const theme = {
   colors: {
-    primary: '#0070f3',
-    borderline: '#dadada'
+    black: '#00214D',
+    white: '#fffffe',
+    primary: '#FF5470',
+    secondary: '#00EBC7',
+    gray: '#888888',
+    borderline: '#dddddd'
   },
 }
+
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
