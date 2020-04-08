@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import TextArea from '../components/TextArea';
 import Button from '../components/Button';
+import Input from '../components/Input';
 
 const DlWrapper = styled.dl`
   dd {
@@ -12,11 +13,22 @@ const DlWrapper = styled.dl`
 
 export default () => {
   const [text, setText] = useState('test');
+
   return (
     <DlWrapper>
       <dt>TextArea</dt>
       <dd>
         <TextArea label="ラベル" value={text} setter={setText} />
+      </dd>
+      <dt>Input</dt>
+      <dd>
+        <Input label="text" value={text} type="text" setter={setText} />
+      </dd>
+      <dd>
+        <Input label="number" value={text} type="number" setter={setText} />
+      </dd>
+      <dd>
+        <Input label="password" value={text} type="password" setter={setText} />
       </dd>
       <dt>Button</dt>
       <dd>
