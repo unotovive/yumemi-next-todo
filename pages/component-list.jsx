@@ -5,6 +5,7 @@ import TextArea from '../components/TextArea';
 import Button from '../components/Button';
 import Select from '../components/Select';
 import Input from '../components/Input';
+import Task from '../components/Task';
 
 const DlWrapper = styled.dl`
   dd {
@@ -21,6 +22,109 @@ export default () => {
     { id: '3', name: 'item3' },
     { id: '4', name: 'item4' },
   ]
+
+  const events = {
+    check: (id, done) => {
+      const taskTmp = tasks.map((task, index) => {
+        if (index === id) {
+          return {
+            ...task,
+            done,
+          }
+        } else {
+          return task
+        }
+      })
+      setTasks(taskTmp)
+    },
+    info: (id) => {
+      alert(tasks[id].info)
+    },
+    star: (id, isFavorite) => {
+      const taskTmp = tasks.map((task, index) => {
+        if (index === id) {
+          return {
+            ...task,
+            isFavorite,
+          }
+        } else {
+          return task
+        }
+      })
+      setTasks(taskTmp)
+    },
+    delete: (id) => {
+      setTasks(tasks.splice(id, 1));
+    },
+  };
+
+  const [tasks, setTasks] = useState(
+    [{
+      title: '高沼カリキュラムを終わらせる',
+      category: 'Work',
+      limit: new Date('2020/4/10'),
+      isFavorite: false,
+      info: 'ここにはメモが入るよ！！！詳細とか書いてね',
+      done: true,
+    }, {
+      title: '高沼カリキュラムを終わらせる',
+      category: 'Work',
+      limit: new Date('2020/4/11'),
+      isFavorite: true,
+      info: '',
+      done: false,
+    }, {
+      title: '高沼カリキュラムを終わらせる',
+      category: 'Work',
+      limit: new Date('2020/4/12'),
+      isFavorite: false,
+      info: 'ここにはメモが入るよ！！！詳細とか書いてね',
+      done: true,
+    }, {
+      title: '高沼カリキュラムを終わらせる',
+      category: 'Work',
+      limit: new Date('2020/4/13'),
+      isFavorite: false,
+      info: 'ここにはメモが入るよ！！！詳細とか書いてね',
+      done: true,
+    }, {
+      title: '高沼カリキュラムを終わらせる',
+      category: 'Work',
+      limit: new Date('2020/4/14'),
+      isFavorite: true,
+      info: '',
+      done: false,
+    }, {
+      title: '高沼カリキュラムを終わらせる',
+      category: 'Work',
+      limit: new Date('2020/4/15'),
+      isFavorite: false,
+      info: 'ここにはメモが入るよ！！！詳細とか書いてね',
+      done: true,
+    }, {
+      title: '高沼カリキュラムを終わらせる',
+      category: 'Work',
+      limit: new Date('2020/4/16'),
+      isFavorite: false,
+      info: 'ここにはメモが入るよ！！！詳細とか書いてね',
+      done: true,
+    }, {
+      title: '高沼カリキュラムを終わらせる',
+      category: 'Work',
+      limit: new Date('2020/4/17'),
+      isFavorite: true,
+      info: '',
+      done: false,
+    }, {
+      title: '高沼カリキュラムを終わらせる',
+      category: 'Work',
+      limit: new Date('2020/4/18'),
+      isFavorite: false,
+      info: 'ここにはメモが入るよ！！！詳細とか書いてね',
+      done: true,
+    }]
+  )
+
   return (
     <DlWrapper>
       <dt>Select</dt>
@@ -51,6 +155,16 @@ export default () => {
       <dd>
         <Button text="secondary" valiant="secondary" onClick={() => alert('secondary')} />
       </dd>
+      <dt>Task</dt>
+      <dd>
+        <Task task={tasks[0]} index={0} events={events} />
+      </dd>
+      <dt>Task With Date</dt>
+      {
+        tasks.map((task, index) => {
+          return <dd key={index}><Task withDate={true} task={task} index={index} events={events} /></dd>;
+        })
+      }
     </DlWrapper >
   )
 }
