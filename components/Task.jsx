@@ -125,7 +125,8 @@ const Month = styled.p`
 
 const TaskBoxWrapper = styled.div`
   height: 84px;
-  width: 100%;
+  width: 580px;
+  min-width: 580px;
   border: 1px solid ${props => props.theme.colors.borderline};
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
