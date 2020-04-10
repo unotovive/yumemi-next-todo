@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import TextArea from '../components/TextArea';
 import Button from '../components/Button';
+import Select from '../components/Select';
 import Input from '../components/Input';
 
 const DlWrapper = styled.dl`
@@ -13,9 +14,19 @@ const DlWrapper = styled.dl`
 
 export default () => {
   const [text, setText] = useState('test');
-
+  const selectItem = [
+    { id: '0', name: 'item0' },
+    { id: '1', name: 'item1' },
+    { id: '2', name: 'item2' },
+    { id: '3', name: 'item3' },
+    { id: '4', name: 'item4' },
+  ]
   return (
     <DlWrapper>
+      <dt>Select</dt>
+      <dd>
+        <Select label="ラベル" value={1} items={selectItem} setter={setText} />
+      </dd>
       <dt>TextArea</dt>
       <dd>
         <TextArea label="ラベル" value={text} setter={setText} />
