@@ -21,7 +21,7 @@ const SideMenu = ({ categories = [], active = -2, events } = {}) => {
       {
         categories.map((category, index) => {
           iconHelper(category.icon)
-          return <MenuItem key="index" onClick={() => menuClickHandler(index)} isActive={active === index}><MenuIcon>{iconHelper(category.icon)}</MenuIcon><MenuTitle>{category.name}</MenuTitle></MenuItem>
+          return <MenuItem key={index} onClick={() => menuClickHandler(index)} isActive={active === index}><MenuIcon>{iconHelper(category.icon)}</MenuIcon><MenuTitle>{category.name}</MenuTitle></MenuItem>
         })
       }
       <SelectorWrapper active={String(active)}><Selector /></SelectorWrapper>
