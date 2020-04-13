@@ -6,6 +6,7 @@ import Button from '../components/Button';
 import Select from '../components/Select';
 import Input from '../components/Input';
 import Task from '../components/Task';
+import SideMenu from '../components/SideMenu';
 
 const DlWrapper = styled.dl`
   dd {
@@ -15,6 +16,7 @@ const DlWrapper = styled.dl`
 
 export default () => {
   const [text, setText] = useState('test');
+  const [menuSelected, setMenuSelected] = useState(-2);
   const selectItem = [
     { id: '0', name: 'item0' },
     { id: '1', name: 'item1' },
@@ -22,6 +24,19 @@ export default () => {
     { id: '3', name: 'item3' },
     { id: '4', name: 'item4' },
   ]
+  const categories = [
+    { name: 'Work', icon: 'bag' },
+    { name: 'お買物リスト', icon: 'freezer' },
+    { name: '買いたい', icon: 'fire' },
+    { name: 'House', icon: 'house' },
+    { name: 'その他', icon: 'stack' },
+  ]
+  const menuEvents = {
+    selectMenu: (menuIndex) => {
+      setMenuSelected(menuIndex);
+      console.log(menuSelected);
+    },
+  }
 
   const events = {
     check: (id, done) => {
@@ -165,6 +180,10 @@ export default () => {
           return <dd key={index}><Task withDate={true} task={task} index={index} events={events} /></dd>;
         })
       }
+      <dt>SideMenu</dt>
+      <dd>
+        <SideMenu categories={categories} active={menuSelected} events={menuEvents}></SideMenu>
+      </dd>
     </DlWrapper >
   )
 }
