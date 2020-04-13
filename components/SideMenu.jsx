@@ -48,7 +48,7 @@ const TopIcon = styled.div`
   left: 40px;
 `
 
-const MenuItem = styled.div`
+const MenuItem = styled.button`
   height: 28px;
   display: flex;
   position: relative;
@@ -59,6 +59,7 @@ const MenuItem = styled.div`
     return props.isActive ? 1 : 0.6;
   }};
   cursor: pointer;
+  user-select: none;
 `
 
 const MenuIcon = styled.div`
